@@ -107,7 +107,7 @@ export default function PricingPage() {
         ]}
         bgColor="bg-gradient-to-r from-emerald-600 to-cyan-600"
         textColor="text-white"
-        duration="35s"
+        duration="180s"
       />
 
       {/* Local Shifting Pricing */}

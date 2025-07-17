@@ -10,23 +10,23 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Just In Call Packers and Movers – Safe. Fast. Affordable.",
+  title: "Just In Call Packers and Movers Tirupati - Best Moving Services in Andhra Pradesh",
   description:
-    "Best Packers and Movers in Tirupati for home relocation, office shifting, local & outstation moving. Get a stress-free moving experience with Just In Call.",
+    "Professional Packers and Movers in Tirupati offering safe, fast & affordable home relocation, office shifting, local & outstation moving services. Get free quotes! Call 9989113003",
   keywords:
-    "packers and movers, Tirupati, home relocation, office shifting, local moving, outstation moving, affordable packers, reliable movers, logistics, Andhra Pradesh",
+    "packers and movers Tirupati, home relocation Tirupati, office shifting Tirupati, local moving Andhra Pradesh, outstation moving, affordable packers, reliable movers, logistics Tirupati, best movers Tirupati, household shifting, furniture moving",
   openGraph: {
-    title: "Just In Call Packers and Movers – Safe. Fast. Affordable.",
+    title: "Just In Call Packers and Movers Tirupati - Best Moving Services in Andhra Pradesh",
     description:
-      "Best Packers and Movers in Tirupati for home relocation, office shifting, local & outstation moving. Get a stress-free moving experience with Just In Call.",
-    url: "https://www.justincallpackers.com", // Replace with your actual domain
+      "Professional Packers and Movers in Tirupati offering safe, fast & affordable home relocation, office shifting, local & outstation moving services. Get free quotes! Call 9989113003",
+    url: "https://www.justincallpackers.com",
     siteName: "Just In Call Packers and Movers",
     images: [
       {
-        url: "/jic-logo.png", // Using the actual logo for Open Graph
+        url: "/jic-logo.png",
         width: 1200,
         height: 630,
-        alt: "Just In Call Packers and Movers Logo",
+        alt: "Just In Call Packers and Movers Tirupati - Professional Moving Services",
       },
     ],
     locale: "en_IN",
@@ -34,10 +34,27 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Just In Call Packers and Movers – Safe. Fast. Affordable.",
+    title: "Just In Call Packers and Movers Tirupati - Best Moving Services in Andhra Pradesh",
     description:
-      "Best Packers and Movers in Tirupati for home relocation, office shifting, local & outstation moving. Get a stress-free moving experience with Just In Call.",
-    images: ["/jic-logo.png"], // Using the actual logo for Twitter card
+      "Professional Packers and Movers in Tirupati offering safe, fast & affordable home relocation, office shifting, local & outstation moving services. Get free quotes! Call 9989113003",
+    images: ["/jic-logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Replace with actual verification code
+  },
+  alternates: {
+    canonical: "https://www.justincallpackers.com",
   },
     generator: 'v0.dev'
 }

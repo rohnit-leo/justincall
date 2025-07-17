@@ -45,7 +45,7 @@ export default function ContactPage() {
         ]}
         bgColor="bg-gradient-to-r from-orange-500 to-red-500"
         textColor="text-white"
-        duration="30s"
+        duration="170s"
       />
 
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">

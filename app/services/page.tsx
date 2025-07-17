@@ -119,7 +119,7 @@ export default function ServicesPage() {
         ]}
         bgColor="bg-gradient-to-r from-indigo-600 to-purple-600"
         textColor="text-white"
-        duration="30s"
+        duration="160s"
       />
 
       {services.map((service, index) => (

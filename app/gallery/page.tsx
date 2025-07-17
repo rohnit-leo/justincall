@@ -88,7 +88,7 @@ export default async function GalleryPage() {
         ]}
         bgColor="bg-gradient-to-r from-purple-600 to-pink-600"
         textColor="text-white"
-        duration="35s"
+        duration="190s"
       />
 
       <section className="w-full py-12 md:py-24 lg:py-32">
@@ -134,7 +134,7 @@ export default async function GalleryPage() {
         ]}
         bgColor="bg-gradient-to-r from-green-500 to-teal-600"
         textColor="text-white"
-        duration="25s"
+        duration="150s"
       />
     </div>
   )
