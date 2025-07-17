@@ -75,31 +75,191 @@
   }
 }
 
-/* Enhanced styles for the announcement bar */
+/* Perfect continuous scrolling announcement bar with no gaps */
 .announcement-bar {
   white-space: nowrap;
   overflow: hidden;
-  box-sizing: border-box;
+  position: relative;
+  width: 100%;
 }
 
-@keyframes scroll-left {
+.announcement-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-seamless 120s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-seamless {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
-}
-
-.animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
 }
 
 /* Custom gradient for NextureX */
 .nexturex-gradient {
-  background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(230, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 0, 0, 0.6);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #e60000 0%, #ff4444 100%);
+  box-shadow: 0 10px 25px rgba(230, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(230, 0, 0, 0.4);
+}
+
+/* Logo background for visibility */
+.logo-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced card styles */
+.enhanced-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.enhanced-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Parallax effect */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #e60000 0%, #ff4444 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #cc0000 0%, #e60000 100%);
 }

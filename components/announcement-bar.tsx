@@ -1,5 +1,3 @@
-import React from "react"
-
 interface AnnouncementBarProps {
   messages?: string[]
   bgColor?: string
@@ -15,29 +13,25 @@ export default function AnnouncementBar({
     "⭐ Trusted by thousands of happy customers in Andhra Pradesh!",
     "🏡 End-to-end home relocation services – stress-free moving guaranteed!",
   ],
-  bgColor = "bg-jic-red",
+  bgColor = "bg-gradient-to-r from-jic-red via-red-600 to-jic-red",
   textColor = "text-white",
-  duration = "30s",
+  duration = "120s",
 }: AnnouncementBarProps) {
+  // Create seamless continuous content by duplicating messages multiple times
+  const separator = " • "
+  const singleLoop = messages.join(separator) + separator
+
+  // Create enough content to ensure seamless looping (duplicate content multiple times)
+  const seamlessContent = Array(6).fill(singleLoop).join("")
+
   return (
-    <div className={`w-full ${bgColor} ${textColor} py-3 overflow-hidden relative z-50 shadow-md`}>
+    <div
+      className={`w-full ${bgColor} ${textColor} py-3 overflow-hidden relative z-50 shadow-lg border-b-2 border-white/20`}
+    >
       <div className="announcement-bar">
-        <span
-          className="text-sm font-medium px-4 inline-block whitespace-nowrap animate-scroll-left"
-          style={{ animationDuration: duration }}
-        >
-          {messages.map((msg, index) => (
-            <React.Fragment key={index}>
-              {msg} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {/* Add spacing between messages */}
-            </React.Fragment>
-          ))}
-          {/* Duplicate messages to ensure continuous scroll without a gap */}
-          {messages.map((msg, index) => (
-            <React.Fragment key={`dup-${index}`}>
-              {msg} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </React.Fragment>
-          ))}
-        </span>
+        <div className="announcement-content text-sm font-medium px-4" style={{ animationDuration: duration }}>
+          {seamlessContent}
+        </div>
       </div>
     </div>
   )
