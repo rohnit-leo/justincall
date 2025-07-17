@@ -26,7 +26,7 @@ export default function AnnouncementBar({
 
   return (
     <div
-      className={`w-full ${bgColor} ${textColor} py-3 overflow-hidden relative z-50 shadow-lg border-b-2 border-white/20`}
+      className={`w-full ${bgColor} ${textColor} py-3 overflow-hidden relative z-40 shadow-lg border-b-2 border-white/20`}
     >
       <div className="announcement-bar">
         <div className="announcement-content text-sm font-medium px-4" style={{ animationDuration: duration }}>
