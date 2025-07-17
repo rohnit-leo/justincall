@@ -13,6 +13,7 @@ import { Loader2, Upload, ImageIcon, Trash2 } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { revalidateGalleryPath } from "@/app/actions" // Import the new server action
 
 interface GalleryImage {
   id: string
@@ -143,7 +144,7 @@ export default function AdminPage() {
       setFile(null)
       setImageName("")
       fetchGalleryImages() // Refresh the list of images
-      router.refresh() // Revalidate gallery page
+      await revalidateGalleryPath() // Revalidate the gallery page
     }
     setUploading(false)
   }
@@ -156,10 +157,14 @@ export default function AdminPage() {
     // Extract file path from URL
     const urlParts = imageUrl.split("/")
     const fileNameInStorage = urlParts[urlParts.length - 1]
-    const storagePath = `gallery-images/${fileNameInStorage}` // Assuming bucket name is 'gallery-images'
+    // Supabase storage remove expects just the file name within the bucket, not the full path
+    // The path is usually bucket_name/file_name, but remove function takes file_name directly if from() is used with bucket name.
+    // Let's ensure we get just the file name from the public URL.
+    const pathSegments = new URL(imageUrl).pathname.split("/")
+    const fileNameForStorage = pathSegments[pathSegments.length - 1]
 
     // Delete from Supabase Storage
-    const { error: storageError } = await supabase.storage.from("gallery-images").remove([fileNameInStorage]) // Supabase storage remove expects just the file name within the bucket
+    const { error: storageError } = await supabase.storage.from("gallery-images").remove([fileNameForStorage])
 
     if (storageError) {
       console.error("Error deleting image from storage:", storageError)
@@ -188,7 +193,7 @@ export default function AdminPage() {
         description: "Image successfully removed from gallery.",
       })
       fetchGalleryImages() // Refresh the list
-      router.refresh() // Revalidate gallery page
+      await revalidateGalleryPath() // Revalidate the gallery page
     }
   }
 
