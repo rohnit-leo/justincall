@@ -5,6 +5,7 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import AnnouncementBar from "@/components/announcement-bar"
+import StickyCTAButton from "@/components/sticky-cta-button"
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <StickyCTAButton />
         <Toaster />
       </body>
     </html>
